@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Amount</label>
+    <input type="text">
+    <label for="">From currency</label>
+    <select name="" id="">
+        <option value="VN">Vietnam</option>
+        <option value="USD">USD</option>
+    </select>
+    <label for="">To currency</label>
+    <select name="" id="">
+        <option value="VN">Vietnam</option>
+        <option value="USD">USD</option>
+    </select>
+    <button onclick="convertMoney()">Convert</button>
+    <p id="result"></p>
+
+
+    
+    <script>
+        function convertMoney(){
+            let valueInput = document.getElementById("valueInput").value;
+            // console.log("valueInput", valueInput);
+            let valueFromCurrency = document.getElementById(fromCurrency).value;
+            // console.log("valueFromCurrency:", valueFromCurrency);
+            let valueToCurrency = document.getElementById(toCurrency).value;
+            // console.log("valueInput", valueInput);
+            if(valueFromCurrency=="USD" && valueToCurrency=="VN"){
+                document.getElementById("result").innerHTML = `${valueInput*20000} VND`;
+            }else if(valueFromCurrency=="VN" && valueToCurrency== "USD"){
+                document.getElementById("result").innerHTML = `${valueInput/20000} $`;
+            }
+        }
+    </script>
+</body>
+</html>
